@@ -48,9 +48,9 @@ export const Wallet = () => {
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
+                    <SelectOrcanaut/>
                     <WalletMultiButton />
                     <WalletDisconnectButton />
-                    <SelectOrcanaut/>
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>

@@ -2,6 +2,8 @@ import {useConnection, useWallet} from "@solana/wallet-adapter-react";
 import {useEffect, useState} from "react";
 import {getParsedNftAccountsByOwner} from "@nfteyez/sol-rayz";
 import axios from "axios";
+import Carousel from "react-material-ui-carousel";
+import OrcanautCard from "./OrcanautCard"
 const ORCANAUT_UPDATE_AUTHORITY = "79SQqm8SUyLR21cXk5TEGCtkjWnN7NwBjUUY2aYUci8B"
 const SelectOrcanaut = () =>
 {
@@ -14,6 +16,7 @@ const SelectOrcanaut = () =>
         return { "image": data.data.image, "mint": mint}
     }
     const [orcanauts, setOrcanauts] = useState([]);
+    const [currentMint, setCurrentMint] = useState('demo');
     useEffect(() =>{
         if(publicKey){
             const getOrcanauts = async () => {
@@ -30,12 +33,12 @@ const SelectOrcanaut = () =>
     },[publicKey]);
     return (
         <>
-            {
-                orcanauts.map((o, i) =>
+            <Carousel  onChange={ (active,_) => {setCurrentMint(orcanauts[active].mint)}}>
                 {
-                    return (<img key={i} width={200} src={o.image}/>)
-                })
-            }
+                    orcanauts.map( (item, i) => <OrcanautCard key={i} item={item} /> )
+                }
+            </Carousel>
+            <p>Current mint = {currentMint}</p>
         </>
     )
 
