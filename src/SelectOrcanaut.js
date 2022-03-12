@@ -33,7 +33,7 @@ const SelectOrcanaut = () =>
     },[publicKey]);
     return (
         <>
-            <Carousel  onChange={ (active,_) => {setCurrentMint(orcanauts[active].mint)}}>
+            <Carousel autoPlay={false}  onChange={ (active,_) => {setCurrentMint(orcanauts[active].mint)}}>
                 {
                     orcanauts.map( (item, i) => <OrcanautCard key={i} item={item} /> )
                 }
