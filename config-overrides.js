@@ -8,5 +8,8 @@ module.exports = function override(config, env) {
         stream: false,
         "crypto": false,
     };
+    config.stats = {
+        children: true
+    };
     return config;
 }
