@@ -20,8 +20,8 @@ const FishTank = React.forwardRef((props, ref) =>
     return (
         <>
             <iframe ref={ref}
-                    width={windowDimmensions.width - 100}
-                    height={(windowDimmensions.width - 100)/2}
+                    width={windowDimmensions.width * .6}
+                    height={windowDimmensions.width * .3}
                     src={process.env.PUBLIC_URL + "GodotApp/PixelnautPets.html"}
                     scrolling={'no'}
             ></iframe>

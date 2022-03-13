@@ -5,9 +5,9 @@ import React from "react";
 const Nav = () => {
     return (
         <AppBar>
-            <Toolbar>
+            <Toolbar sx={{backgroundColor: 'rgb(29,37,122)'}}>
                 <Typography sx={{flexGrow: 1}}> </Typography>
-                <WalletMultiButton/>
+                <WalletMultiButton style={{background: "orange"}}/>
             </Toolbar>
 
         </AppBar>

@@ -19,9 +19,10 @@ import { clusterApiUrl } from '@solana/web3.js';
 import SelectOrcanaut from "./SelectOrcanaut";
 import PixelnautGame from "./PixelnautGame";
 import Nav from "./Nav";
+import Roadmap from "./Roadmap";
 
 // Default styles that can be overridden by your app
-require('@solana/wallet-adapter-react-ui/styles.css');
+require('./wallet-styles.css');
 
 export const Wallet = () => {
     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
@@ -54,9 +55,9 @@ export const Wallet = () => {
 
                         <header className="App-header">
                             <Nav/>
-                            <img width={'50%'} src={process.env.PUBLIC_URL + '/pixelnaut-logo2.svg'}/>
-                        <PixelnautGame/>
-
+                            <img style={{margin: '100px'}} width={'50%'} src={process.env.PUBLIC_URL + '/pixelnaut-logo2.svg'}/>
+                            <PixelnautGame/>
+                            <Roadmap/>
                         </header>
                     </div>
                 </WalletModalProvider>

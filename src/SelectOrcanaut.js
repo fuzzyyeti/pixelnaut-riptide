@@ -50,6 +50,9 @@ const SelectOrcanaut = (props) =>
     },[publicKey]);
     return (
         <>
+            <h2>{publicKey && orcanauts.length != 0  && "Choose your pixelnaut"}</h2>
+            <h2>{!publicKey && "Connect your wallet with an Orcanaut to play"}</h2>
+            <h2>{publicKey && orcanauts.length === 0 && <a  target="_blank" href={'https://magiceden.io/marketplace/orcanauts'}>Purchase an orcanaut to play</a>}</h2>
             <Carousel autoPlay={false} prev={(active,_) => {setCurrentMint(orcanauts[active].mint)}} next={ (active,_) => {setCurrentMint(orcanauts[active].mint)}}>
                 {
                     orcanauts.map( (item, i) => <OrcanautCard key={i} item={item} /> )
