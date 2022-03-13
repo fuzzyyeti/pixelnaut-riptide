@@ -18,7 +18,7 @@ const PixelnautGame = () =>
     },[fishTank])
     return (<>
         <SelectOrcanaut enabled={isTankEnabled} fishTank={fishTank}/>
-        <FishTank ref={fishTank}/>
+        <FishTank enabled={isTankEnabled} ref={fishTank}/>
     </>);
 }
 

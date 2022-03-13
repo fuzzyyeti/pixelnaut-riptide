@@ -20,11 +20,11 @@ const SelectOrcanaut = (props) =>
 
     useEffect(() =>
         {
-            if(currentMint != 'demo'){
+            if(props.enabled){
                 props.fishTank.current.contentWindow.window.add_mint(currentMint);
             }
 
-        },[currentMint]
+        },[currentMint,props.enabled]
     );
 
     useEffect(() =>{
