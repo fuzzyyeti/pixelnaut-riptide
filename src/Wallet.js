@@ -18,6 +18,7 @@ import {
 import { clusterApiUrl } from '@solana/web3.js';
 import SelectOrcanaut from "./SelectOrcanaut";
 import PixelnautGame from "./PixelnautGame";
+import Nav from "./Nav";
 
 // Default styles that can be overridden by your app
 require('@solana/wallet-adapter-react-ui/styles.css');
@@ -49,8 +50,15 @@ export const Wallet = () => {
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
-                    <PixelnautGame/>
-                    <WalletMultiButton/>
+                    <div className="App">
+
+                        <header className="App-header">
+                            <Nav/>
+                            <img width={'50%'} src={process.env.PUBLIC_URL + '/pixelnaut-logo2.svg'}/>
+                        <PixelnautGame/>
+
+                        </header>
+                    </div>
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
