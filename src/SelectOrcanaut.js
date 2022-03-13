@@ -35,7 +35,14 @@ const SelectOrcanaut = (props) =>
                 orcanautData.filter(o => o.updateAuthority == ORCANAUT_UPDATE_AUTHORITY).map(
                     async o => {
                         var orcanaut = await getOrcanaut(o.data.uri, o.mint);
-                        setOrcanauts(o => [orcanaut,...o])
+                        setOrcanauts(o => {
+                            if(o.length === 0)
+                            {
+                                console.log('setting first mint');
+                                setCurrentMint(orcanaut.mint);
+                            }
+                            return [...o, orcanaut];
+                        })
                     });
             }
             getOrcanauts();
@@ -43,7 +50,7 @@ const SelectOrcanaut = (props) =>
     },[publicKey]);
     return (
         <>
-            <Carousel autoPlay={false}  onChange={ (active,_) => {setCurrentMint(orcanauts[active].mint)}}>
+            <Carousel autoPlay={false} prev={(active,_) => {setCurrentMint(orcanauts[active].mint)}} next={ (active,_) => {setCurrentMint(orcanauts[active].mint)}}>
                 {
                     orcanauts.map( (item, i) => <OrcanautCard key={i} item={item} /> )
                 }
