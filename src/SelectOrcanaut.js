@@ -16,7 +16,7 @@ const SelectOrcanaut = (props) =>
         return { "image": data.data.image, "mint": mint}
     }
     const [orcanauts, setOrcanauts] = useState([]);
-    const [currentMint, setCurrentMint] = useState('demo');
+    const [currentMint, setCurrentMint] = useState('9eohkfSjLNd7GfU7wMoDA5RakpWbzHEodikdik9NHuMW');
 
     useEffect(() =>
         {
