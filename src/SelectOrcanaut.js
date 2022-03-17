@@ -38,7 +38,7 @@ const SelectOrcanaut = (props) =>
                         setOrcanauts(o => {
                             if(o.length === 0)
                             {
-                                console.log('setting first mint');
+                                console.log('setting first mint', orcanaut.mint);
                                 setCurrentMint(orcanaut.mint);
                             }
                             return [...o, orcanaut];
