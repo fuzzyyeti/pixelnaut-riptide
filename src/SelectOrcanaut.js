@@ -21,6 +21,7 @@ const SelectOrcanaut = (props) =>
     useEffect(() =>
         {
             if(props.enabled){
+                console.log("adding a new mint", currentMint);
                 props.fishTank.current.contentWindow.window.add_mint(currentMint);
             }
 
