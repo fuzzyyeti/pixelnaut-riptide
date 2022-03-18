@@ -4,7 +4,6 @@ import {getParsedNftAccountsByOwner} from "@nfteyez/sol-rayz";
 import axios from "axios";
 import Carousel from "react-material-ui-carousel";
 import OrcanautCard from "./OrcanautCard"
-const DEFAULT_ORCANAUT_MINT = '9eohkfSjLNd7GfU7wMoDA5RakpWbzHEodikdik9NHuMW';
 const ORCANAUT_UPDATE_AUTHORITY = "79SQqm8SUyLR21cXk5TEGCtkjWnN7NwBjUUY2aYUci8B"
 const SelectOrcanaut = (props) =>
 {
@@ -16,12 +15,12 @@ const SelectOrcanaut = (props) =>
         var data = await axios.get(uri);
         return { "image": data.data.image, "mint": mint}
     }
-    const [orcanauts, setOrcanauts] = useState();
-    const [currentMint, setCurrentMint] = useState([DEFAULT_ORCANAUT_MINT]);
+    const [orcanauts, setOrcanauts] = useState([]);
+    const [currentMint, setCurrentMint] = useState('9eohkfSjLNd7GfU7wMoDA5RakpWbzHEodikdik9NHuMW');
 
     useEffect(() =>
         {
-            if(props.enabled && currentMint != DEFAULT_ORCANAUT_MINT){
+            if(props.enabled){
                 console.log("adding a new mint", currentMint);
                 props.fishTank.current.contentWindow.window.add_mint(currentMint);
             }
