@@ -19,7 +19,9 @@ var Roadmap = () =>
                 <li>Make sure to clean your Pixelnaut's tank every seven days (seven minutes for demo mode).
                     You may get some coins, if you don't clean it too often, but if you wait to long you will lose all your coins.</li>
                 <li>Open the shop window to buy items. You can drag them around the tank to the perfect location.</li>
-                <li>Open the shop window to upgrade your tank. You will get more room to decorate.</li></ul></div>} />
+                <li>Open the shop window to upgrade your tank. You will get more room to decorate.</li>
+                <li>If you transfer your Orcanaut to a new wallet, the tank, items,
+                    and coins travel along with the Orcanaut to the new owner!</li></ul></div>} />
             <h2 style={{marginTop: '100px', color: "white" }}>Roadmap</h2>
             <Box sx={{width: '100px', height: '100px',background: 'linear-gradient(#FFF, #FFF) no-repeat center/2px 100%'}}/>
             <RoadmapCard heading={'Mini Games'} content={'Instead of getting coins directly from feeding your ' +
