@@ -5,6 +5,7 @@ import axios from "axios";
 import Carousel from "react-material-ui-carousel";
 import OrcanautCard from "./OrcanautCard"
 const ORCANAUT_UPDATE_AUTHORITY = "79SQqm8SUyLR21cXk5TEGCtkjWnN7NwBjUUY2aYUci8B"
+const DEFAULT_MINT = '9eohkfSjLNd7GfU7wMoDA5RakpWbzHEodikdik9NHuMW'
 const SelectOrcanaut = (props) =>
 {
     const { connection } = useConnection();
@@ -16,11 +17,11 @@ const SelectOrcanaut = (props) =>
         return { "image": data.data.image, "mint": mint}
     }
     const [orcanauts, setOrcanauts] = useState([]);
-    const [currentMint, setCurrentMint] = useState('9eohkfSjLNd7GfU7wMoDA5RakpWbzHEodikdik9NHuMW');
+    const [currentMint, setCurrentMint] = useState(DEFAULT_MINT);
 
     useEffect(() =>
         {
-            if(props.enabled){
+            if(props.enabled && currentMint !== DEFAULT_MINT){
                 console.log("adding a new mint", currentMint);
                 props.fishTank.current.contentWindow.window.add_mint(currentMint);
             }
