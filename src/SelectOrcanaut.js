@@ -16,8 +16,8 @@ const SelectOrcanaut = (props) =>
         var data = await axios.get(uri);
         return { "image": data.data.image, "mint": mint}
     }
-    const [orcanauts, setOrcanauts] = useState([DEFAULT_ORCANAUT_MINT]);
-    const [currentMint, setCurrentMint] = useState();
+    const [orcanauts, setOrcanauts] = useState();
+    const [currentMint, setCurrentMint] = useState([DEFAULT_ORCANAUT_MINT]);
 
     useEffect(() =>
         {
