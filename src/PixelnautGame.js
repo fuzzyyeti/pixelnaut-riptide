@@ -17,6 +17,9 @@ const PixelnautGame = () =>
         }
     },[fishTank])
     return (<>
+        <h1>Winner of the Riptide Hackathon Orca Community Prize</h1>
+        <p>Thank you <a href={'https://orca.so'}>Orca</a>, the best DEX on Solana!</p>
+        <p>Announcement: The feeding timer has been updated to one day instead of one minute and cleaning timer has been updated to one week instead of seven minutes.</p>
         <SelectOrcanaut enabled={isTankEnabled} fishTank={fishTank}/>
         <FishTank enabled={isTankEnabled} ref={fishTank}/>
     </>);
