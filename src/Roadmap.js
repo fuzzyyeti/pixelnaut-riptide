@@ -1,7 +1,3 @@
-import Card from '@mui/material/Card';
-import Box from '@mui/material/Box'
-import CardContent from '@mui/material/CardContent';
-import {Typography} from "@mui/material";
 import RoadmapCard from "./RoadmapCard";
 import React from "react";
 
